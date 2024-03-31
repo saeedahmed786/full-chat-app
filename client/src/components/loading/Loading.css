@@ -1,0 +1,16 @@
+.loading {
+    text-align: center;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    /* animation: rotation 1s ease-in-out infinite */
+}
+
+/* @keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(719deg)
+    }
+} */

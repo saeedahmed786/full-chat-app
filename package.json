@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix frontend",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -18,16 +18,12 @@
     "cloudinary": "^1.25.1",
     "concurrently": "^6.0.2",
     "crypto": "^1.0.1",
-    "cryptr": "^6.0.2",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.7",
     "multer": "^1.4.2",
     "multer-storage-cloudinary": "^4.0.0",
-    "nodemailer": "^6.6.3",
-    "react-otp-input": "^2.3.0",
-    "socket.io": "^4.0.1",
-    "twilio": "^3.61.0"
+    "nodemailer": "^6.6.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

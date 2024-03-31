@@ -1,9 +1,10 @@
 const cloudinary = require('cloudinary');
+const config = require('../config/keys');
 
 cloudinary.config({
-    cloud_name: 'saeedahmed' || process.env.CLOUD_NAME,
-    api_key: '633615861791628' || process.env.CLOUDINARY_API_KEY,
-    api_secret: 'pcu5hDuFK01arwcxuotN3EHXFRc' || process.env.CLOUDINARY_SECRET_KEY
+    cloud_name: config.cloudinary_cloud_name,
+    api_key: config.cloudinary_api_key,
+    api_secret: config.cloudinary_api_secret
   });
 
   module.exports = cloudinary;

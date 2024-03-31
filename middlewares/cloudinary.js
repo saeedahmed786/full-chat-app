@@ -1,21 +1,22 @@
 const cloudinary = require('cloudinary');
+const config = require('../config/keys');
 
 cloudinary.config({
-    cloud_name: 'saeedahmed' || process.env.CLOUD_NAME,
-    api_key: '633615861791628' || process.env.CLOUDINARY_API_KEY,
-    api_secret: 'pcu5hDuFK01arwcxuotN3EHXFRc' || process.env.CLOUDINARY_SECRET_KEY
-  });
+    cloud_name: config.cloudinary_cloud_name,
+    api_key: config.cloudinary_api_key,
+    api_secret: config.cloudinary_api_secret
+});
 
-  exports.uploads = (file, folder) => {
-      return new Promise(resolve => {
-          cloudinary.uploader.upload(file, (result) => {
-              resolve({
-                  url: result.url,
-                  id: result.public_id
-              })
-          }, {
-              resource_type : "auto",
-              folder: folder
-          })
-      })
-  }
+exports.uploads = (file, folder) => {
+    return new Promise(resolve => {
+        cloudinary.uploader.upload(file, (result) => {
+            resolve({
+                url: result.secure_url,
+                id: result.public_id
+            })
+        }, {
+            resource_type: "auto",
+            folder
+        })
+    })
+}

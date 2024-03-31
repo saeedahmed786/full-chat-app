@@ -13,25 +13,25 @@ export const Navbar = () => {
         isAuthenticated()
           ?
           <Menu>
-             <Menu.Item key = '1'>
-              <h6 className = 'p-2 bg-light'>
+            <Menu.Item key='1'>
+              <h6 className='p-2 bg-light'>
                 {isAuthenticated().fullName}
               </h6>
             </Menu.Item>
-             <Menu.Item key = '2'>
-              <Link to= {'/profile/' + isAuthenticated()._id}>
+            <Menu.Item key='2'>
+              <Link to={'/profile/' + isAuthenticated()._id}>
                 Profile
               </Link>
             </Menu.Item>
             {
               isAuthenticated().role === 1 &&
-              <Menu.Item key = '3'>
-              <Link to= '/admin/users'>
+              <Menu.Item key='3'>
+                <Link to='/admin/users'>
                   Dashboard
-              </Link>
-            </Menu.Item>
+                </Link>
+              </Menu.Item>
             }
-            <Menu.Item key = '4'>
+            <Menu.Item key='4'>
               <a href='/login' onClick={(e) => { logout(() => { }) }}>
                 Logout
               </a>
@@ -55,19 +55,16 @@ export const Navbar = () => {
   return (
     <div className='main-nav'>
       <nav className="navbar fixed-top">
-        <Link className="navbar-brand" to="/" style={{ color: 'rgba(130, 36, 227, 0.8)', fontSize: '43px', fontWeight: '700' }}>Timble</Link>
-        {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button> */}
+        <Link className="navbar-brand" to="/" style={{ color: 'rgb(15 23 42/1)', fontSize: '43px', fontWeight: '700' }}>Web App</Link>
         <div>
-          <ul className="navbar-nav ml-auto mr-5 list-unstyle pt-3" style={{ fontSize: '12px' }}> 
+          <ul className="navbar-nav ml-auto mr-5 list-unstyle pt-3" style={{ fontSize: '12px' }}>
             <li className='nav-item profile' style={{ fontWeight: 'normal' }}>
               <Dropdown overlay={menu}>
                 {
                   isAuthenticated()
                     ?
                     <Link>
-                      <img src={isAuthenticated().image} width='43' height = '43' alt = 'image' className='rounded-circle' />
+                      <img src={isAuthenticated().image} width='43' height='43' alt='image' className='rounded-circle' />
                     </Link>
                     :
                     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
